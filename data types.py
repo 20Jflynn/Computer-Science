@@ -16,7 +16,7 @@ print(timeMins,"mins", timeSecs,"secs")
 hour = int(input("enter hour between 1 and 12"))
 ahead = int(input("how many hours ahead"))
 finalTime = hour + ahead
-if finalTime > 12:
+while finalTime > 12:
     finalTime -= 12
 print(finalTime, "oclock")
 

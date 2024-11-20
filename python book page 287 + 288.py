@@ -1,3 +1,4 @@
+#question 5
 string = input("enter a sentence/series of words");
 final = "";
 length = len(string);
@@ -17,7 +18,7 @@ while pos < length:
 		pos += 1;
 print(final)
 
-
+#question 6
 name = input("ENTER A WORD");
 length = len(name);
 word = "";
@@ -31,26 +32,45 @@ if word == backWord:
 else:
 	print("it is not a palindrome")
 
-
+#question 7
 substring = input("enter a string")
 lengthStr = len(substring)
 temp = ""
 longest = ""
 maxSub = 0
 tempSub = 0
-for q in range(0,lengthStr,1):
-	if substring[q] in "AOUIE" or substring[q] in "aoeiu":
-		temp = "";
-		tempSub = 0;
+count = 0;
+for q in range(lengthStr):
+	if substring[q].upper() in ["A","O","U","I","E"]:
+		if tempSub > maxSub:
+			maxSub = tempSub;
+			longest = temp;
+			temp = "";
+			tempSub = 0;
 	else:
 		temp += substring[q];
 		tempSub += 1;
-if tempSub > maxSub:
-		maxSub = tempSub;
-		longest = temp;
-		temp = "";
-		tempSub = 0;
-else:
-	temp = "";
-	tempSub = 0;
 print(longest)
+
+#question 8
+wordStr = input("enter a string");
+lengthWord = len(wordStr);
+position = -lengthWord;
+finalWord = "";
+for w in range(0, lengthWord, 2):
+	if w != 0:
+		finalWord += wordStr[w - 1].upper()
+	finalWord += wordStr[w];
+print(finalWord);
+
+#question 9
+email = input("enter your email");
+validity = ""
+domain = "@edupillar.com";
+domainLen = len(domain);
+for sub in range(-1,-domainLen - 1, -1):
+	validity += email[sub];
+if validity[::-1] == domain:
+	print("email is valid");
+else:
+	print("email not valid");

@@ -99,3 +99,50 @@ else:
 			print("\t",word2[carry - 1], "\t", word2[-carry])
 		if carry == 3:
 			print("\t","  ",word2[carry - 1], word2[-carry])
+			
+
+#question 7
+number = int(input("enter a number "))
+roman = ""
+
+while number >= 1000:
+    number -= 1000
+    roman += "M"
+
+while number >= 100:
+    if number >= 900:
+        number -= 900
+        roman += "CM"
+    elif number >= 500:
+        number -= 500
+        roman += "D"
+    else:
+        number -= 100
+        roman += "C"
+
+while number >= 10:
+    if number >= 90:
+        number -= 90
+        roman += "XC"
+    elif number >= 50:
+        number -= 50
+        roman += "L"
+    else:
+        number -= 10
+        roman += "X"
+
+if number == 9:
+    roman += "IX"
+    number -= 9
+elif number >= 5:
+    roman += "V"
+    number -= 5
+elif number == 4:
+    roman += "IV"
+    number -= 4
+elif number > 0:
+    roman += "I" * number
+    number = 0
+
+print(roman)
+			

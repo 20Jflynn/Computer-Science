@@ -17,5 +17,8 @@ for i in lst:
         mode.append(i)
     elif lst.count(i) == tempNum and i not in mode:
         mode.append(i)
-print(mode, "is/are the mode/s")
+if tempNum == 1:
+    print("there is no mode")
+else:
+    print(*mode, "is/are the mode/s")
         
